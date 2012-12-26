@@ -1,0 +1,28 @@
+Jess> TRUE
+Jess> TRUE
+Jess> TRUE
+Jess> TRUE
+Jess> TRUE
+Jess> TRUE
+Jess> TRUE
+Jess> 
+[info] Pornim masina ...
+[info] Tick 0: No perception found.
+[info] Tick 1: Found and loaded perception.
+Situatie de urgenta: aparitie_animal .
+Nu gandesc. Conduc
+[info] Tick 2
+Oprim masina ...
+7
+Jess> For a total of 0 facts in module IMEDIAT.
+Jess> For a total of 0 facts in module CONDUCERE.
+Jess> For a total of 0 facts in module PLANIFICARE.
+Jess> f-0   (MAIN::initial-fact)
+f-2   (MAIN::speed 30)
+f-7   (MAIN::max-speed 100)
+f-9   (MAIN::need-action urgenta evitare)
+f-10   (MAIN::need-action urgenta oprire)
+f-11   (MAIN::need-action urgenta virare)
+f-12   (MAIN::need-action oprire)
+For a total of 7 facts in module MAIN.
+Jess> 
