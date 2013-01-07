@@ -34,11 +34,11 @@
 (defrule stop_all
 	(declare (salience 10000))
  ?r1 <-	(timer ?time)
- ?r2 <-	(finish ?time)
+ ?r2 <-	(finish ?time $?args)
 =>
 	(retract ?r1)
 	(retract ?r2)
-	(printout t ?*INFO* " Tick " ?time crlf)
-	(printout t "Oprim masina ..." crlf)
+	(printout t ?*INFO* " Tick " ?time)
+	(printout t " Oprim masina ..." crlf)
 	(halt)
 )

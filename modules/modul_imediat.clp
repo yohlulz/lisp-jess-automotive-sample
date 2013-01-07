@@ -53,7 +53,7 @@
 	=>
 	(assert (MAIN::need-action virare stanga))
 	(retract ?r1)
-	(focus CONDUCERE)
+	(focus PLANIFICARE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_prioritate_obligatoriu_dreapta
@@ -62,7 +62,7 @@
 	=>
 	(assert (MAIN::need-action virare dreapta))
 	(retract ?r1)
-	(focus CONDUCERE)
+	(focus PLANIFICARE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_prioritate_obligatoriu_fata
@@ -71,29 +71,27 @@
 	=>
 	(assert (MAIN::need-action virare no ALL))
 	(retract ?r1)
-	(focus CONDUCERE)
+	(focus PLANIFICARE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_interzicere_acces_interzis
 	(declare (salience ?*SALIENCE_SEMN_STOP*))
 ?r1 <-	(MAIN::semn interzicere acces_interzis)
 	=>
-	(assert (MAIN::need-action oprire))
 	(assert (MAIN::need-action virare stanga))
 	(assert (MAIN::need-action virare dreapta))
 	(retract ?r1)
-	(focus CONDUCERE)
+	(focus PLANIFICARE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_interzicere_acces_interzis
 	(declare (salience ?*SALIENCE_SEMN_STOP*))
 ?r1 <-	(MAIN::semn interzicere acces_interzis)
 	=>
-	(assert (MAIN::need-action oprire))
 	(assert (MAIN::need-action virare stanga))
 	(assert (MAIN::need-action virare dreapta))
 	(retract ?r1)
-	(focus CONDUCERE)
+	(focus PLANIFICARE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_interzicere_virare_stanga
@@ -102,7 +100,7 @@
 	=>
 	(assert (MAIN::need-action virare no stanga))
 	(retract ?r1)
-	(focus CONDUCERE)
+	(focus PLANIFICARE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_interzicere_virare_dreapta
@@ -111,18 +109,17 @@
 	=>
 	(assert (MAIN::need-action virare no dreapta))
 	(retract ?r1)
-	(focus CONDUCERE)
+	(focus PLANIFICARE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_interzicere_interzis_ambele_sensuri
 	(declare (salience ?*SALIENCE_SEMN_STOP*))
 ?r1 <-	(MAIN::semn interzicere interzis_ambele_sensuri)
 	=>
-	(assert (MAIN::need-action oprire))
 	(assert (MAIN::need-action virare stanga))
 	(assert (MAIN::need-action virare dreapta))
 	(retract ?r1)
-	(focus CONDUCERE)
+	(focus PLANIFICARE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_interzicere_depasire_interzisa
@@ -228,7 +225,7 @@
 	(declare (salience ?*SALIENCE_SEMN_KB*))
 ?r1 <-	(MAIN::semn avertizare presemnalizare_trecere_pietoni)
 	=>
-	(assert (MAIN::kb presemnalizare_trecere_pietoni))
+	(assert (MAIN::kb presemnalizare trecere_pietoni))
 	(retract ?r1)
 	(focus CONDUCERE)
 )
@@ -237,16 +234,16 @@
 	(declare (salience ?*SALIENCE_SEMN_KB*))
 ?r1 <-	(MAIN::semn avertizare presemnalizare_trecere_cu_nivel_de_cale_ferata)
 	=>
-	(assert (MAIN::kb presemnalizare_trecere_nivel_cale_ferata))
+	(assert (MAIN::kb presemnalizare trecere_nivel_cale_ferata))
 	(retract ?r1)
 	(focus CONDUCERE)
 )
 ; ---------
 (defrule IMEDIAT::actiune_imediata_presemnalizare_intersectie_cu_drum_fara_prioritate
 	(declare (salience ?*SALIENCE_SEMN_KB*))
-?r1 <-	(MAIN::semn avertizare presemnalizare_intersectie_cu_drum_fara_prioritate)
+?r1 <-	(MAIN::semn avertizare presemnalizareintersectie_cu_drum_fara_prioritate)
 	=>
-	(assert (MAIN::kb presemnalizare_intersectie_cu_drum_fara_prioritate))
+	(assert (MAIN::kb presemnalizare intersectie_cu_drum_fara_prioritate))
 	(retract ?r1)
 	(focus CONDUCERE)
 )
@@ -255,7 +252,7 @@
 	(declare (salience ?*SALIENCE_SEMN_KB*))
 ?r1 <-	(MAIN::semn avertizare presemnalizare_sens_giratoriu)
 	=>
-	(assert (MAIN::kb presemnalizare_sens_giratoriu))
+	(assert (MAIN::kb presemnalizare sens_giratoriu))
 	(retract ?r1)
 	(focus CONDUCERE)
 )
@@ -264,7 +261,7 @@
 	(declare (salience ?*SALIENCE_SEMN_KB*))
 ?r1 <-	(MAIN::semn avertizare presemnalizare_circulatie_in_ambele_sensuri)
 	=>
-	(assert (MAIN::kb presemnalizare_circulatie_in_ambele_sensuri))
+	(assert (MAIN::kb presemnalizare circulatie_in_ambele_sensuri))
 	(retract ?r1)
 	(focus CONDUCERE)
 )
@@ -441,8 +438,7 @@
 	=>
 	(assert (MAIN::need-action urgenta evitare))
 	(assert (MAIN::need-action urgenta oprire))
-	(assert (MAIN::need-action urgenta virare))
 	(retract ?r1)
-	(printout t "Situatie de urgenta: " ?value " ." crlf)
+	(printout t "[info] Situatie de urgenta: " ?value " ." crlf)
 	(focus CONDUCERE)
 )
