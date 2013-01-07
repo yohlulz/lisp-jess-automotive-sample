@@ -33,6 +33,7 @@
 
 ; =============== Grup prioritati semanle politist
 (defglobal ?*SALIENCE_SEMNAL_DEFAULT* = 200)
+(defglobal ?*SALIENCE_SEMNAL_MARIRE* = 400)
 ; =============== END prioritati semnale politist
 
 ; =============== Grup prioritati life/death
@@ -45,3 +46,4 @@
 (defglobal ?*ERROR* = "[error]")
 (defglobal ?*DEBUG* = "[debug]")
 ; ================ END constante DEBUG LEVEL ==========
+(defglobal ?*PRAG_VITEZA* = 60)
