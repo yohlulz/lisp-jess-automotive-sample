@@ -439,6 +439,6 @@
 	(assert (MAIN::need-action urgenta evitare))
 	(assert (MAIN::need-action urgenta oprire))
 	(retract ?r1)
-	(printout t "[info] Situatie de urgenta: " ?value " ." crlf)
+	(printout t ?*INFO* " Situatie de urgenta: " ?value " ." crlf)
 	(focus CONDUCERE)
 )

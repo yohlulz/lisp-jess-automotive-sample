@@ -10,7 +10,7 @@
 	(test (< ?speed_value ?*PRAG_VITEZA*))
 	(test (= ?vreme_value "uscat"))
 =>
-	(printout t "[info] Depasire urgenta prin oprire." crlf)
+	(printout t ?*INFO* " Depasire urgenta prin oprire." crlf)
 	(retract ?r1)
 	(retract ?r2)
 	(focus PLANIFICARE)
@@ -21,7 +21,7 @@
 ?r1 <-	(MAIN::need-action urgenta oprire)
 ?r2 <-	(MAIN::need-action urgenta evitare)
 =>
-	(printout t "[info] Depasire urgenta prin evitare." crlf)
+	(printout t ?*INFO* " Depasire urgenta prin evitare." crlf)
 	(retract ?r1)
 	(retract ?r2)
 	(focus PLANIFICARE)
@@ -32,7 +32,7 @@
 ?r1 <-	(MAIN::need-action oprire)
 ?r2 <-  (MAIN::speed ?speed_value)
 =>
-	(printout t "[info] Oprire masina.")
+	(printout t ?*INFO* " Oprire masina.")
 	(printout t "Repornire masina. Viteza curenta 20" crlf)
 	(retract ?r1)
 	(retract ?r2)
@@ -44,7 +44,7 @@
 	(declare (salience ?*SALIENCE_SEMAFOR_DEFAULT*))
 ?r1 <-	(MAIN::need-action cedare)
 =>
-	(printout t "[info] Cedare trecere si continuare drum." crlf)
+	(printout t ?*INFO* " Cedare trecere si continuare drum." crlf)
 	(retract ?r1) 
 	(focus PLANIFICARE)
 )
@@ -55,7 +55,7 @@
 ?r2 <-  (MAIN::speed ?speed_value)
 	(test (> ?speed_value 20))
 =>
-	(printout t "[info] Reducere viteza.")
+	(printout t ?*INFO* " Reducere viteza.")
 	(printout t "Viteza curenta " (- ?speed_value 10) crlf)
 	(retract ?r2)
 	(assert (MAIN::speed (- ?speed_value 10)))
@@ -68,7 +68,7 @@
 ?r1 <-	(MAIN::need-action marire_viteza)
 ?r2 <-	(MAIN::speed ?speed_value)
 =>
-	(printout t "[info] Marire viteza." )
+	(printout t ?*INFO* " Marire viteza." )
 	(printout t "Viteza curenta " (+ ?speed_value 10) crlf)
 	(retract ?r1) 
 	(retract ?r2)
@@ -87,7 +87,7 @@
  ?r3 <-	(MAIN::kb linie_intrerupta)
  ?r4 <-	(MAIN::kb depasire)
 =>
-	(printout t "[info] Marire viteza cu posibilitate de depasire." )
+	(printout t ?*INFO* " Marire viteza cu posibilitate de depasire." )
 	(printout t "Viteza curenta " (+ ?speed_value 10) crlf)
 	(retract ?r1) 
 	(retract ?r3)
@@ -107,12 +107,14 @@
  ?r3 <-	(MAIN::kb linie_continua)
  ?r4 <-	(MAIN::kb no depasire)
 =>
-	(printout t "[info] Marire viteza fara posibilitate de depasire." )
+	(printout t ?*INFO* " Marire viteza fara posibilitate de depasire." )
 	(printout t "Viteza curenta " (+ ?speed_value 10) crlf)
 	(retract ?r2)
 	(retract ?r3)
 	(retract ?r4)
-	(assert (MAIN:speed (+ ?speed_value 10)))
+	(assert (MAIN::speed (+ ?speed_value 10)))
+(facts MAIN)
 	(focus PLANIFICARE)
 )
 ; ---------
+
