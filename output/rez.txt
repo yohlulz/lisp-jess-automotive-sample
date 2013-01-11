@@ -5,6 +5,7 @@ Jess> TRUE
 Jess> TRUE
 Jess> TRUE
 Jess> TRUE
+Jess> TRUE
 Jess> 
 [info] Pornim masina ...
 [info] Tick 0: No perception found.
@@ -16,17 +17,25 @@ Jess>
 [info] Oprire masina.Repornire masina. Viteza curenta 20
 [info] Deplasare inainte.
 [info] Marire viteza cu posibilitate de depasire.Viteza curenta 30
-[info] Tick 2 Oprim masina ...
-17
+[info] Tick 2: No perception found.
+[info] Tick 3: Found and loaded perception.
+[info] Marire viteza fara posibilitate de depasire.Viteza curenta 40
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::finish 5 sursa1 destinatie1 rapid)
+f-3   (MAIN::vreme ud)
+f-33   (MAIN::max-speed 40)
+f-34   (MAIN::nod sursa3 intermediar3 rapid stanga)
+f-35   (MAIN::nod sursa3 intermediar3 normal fata)
+f-36   (MAIN::nod sursa3 intermediar3 normal dreapta)
+f-37   (MAIN::timer 4)
+f-40   (MAIN::speed 40)
+For a total of 9 facts in module MAIN.
+[info] Tick 4: No perception found.
+[info] Tick 5 Oprim masina ...
+31
 Jess> For a total of 0 facts in module IMEDIAT.
 Jess> For a total of 0 facts in module CONDUCERE.
 Jess> For a total of 0 facts in module PLANIFICARE.
 Jess> f-0   (MAIN::initial-fact)
-f-3   (MAIN::vreme ud)
-f-13   (MAIN::max-speed 100)
-f-14   (MAIN::nod sursa1 intermediar1 rapid stanga)
-f-15   (MAIN::nod sursa1 intermediar1 normal fata)
-f-16   (MAIN::nod sursa1 intermediar1 normal dreapta)
-f-29   (MAIN::speed 30)
-For a total of 7 facts in module MAIN.
+For a total of 1 facts in module MAIN.
 Jess> 

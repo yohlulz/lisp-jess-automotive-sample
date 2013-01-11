@@ -1,0 +1,7 @@
+(MAIN::marcaj linie_continua)
+(MAIN::semn interzicere depasire_interzisa)
+;(MAIN::semn prioritate obligatoriu_la_dreapta)
+(MAIN::max-speed 40)
+(MAIN::nod sursa3 intermediar3 rapid stanga)
+(MAIN::nod sursa3 intermediar3 normal fata)
+(MAIN::nod sursa3 intermediar3 normal dreapta)
